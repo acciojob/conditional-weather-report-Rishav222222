@@ -1,18 +1,21 @@
-import React from "react";
+// WeatherDisplay.js
+import React from 'react';
 
-function WeatherDisplay({ weather }) {
-  // Set the color based on the temperature value
-  const temperatureStyle = {
-    color: weather.temperature > 20 ? "red" : "blue",
+const WeatherDisplay = ({ weather }) => {
+  const { temperature, conditions } = weather;
+
+  // Inline styling for temperature based on the value
+  const tempStyle = {
+    color: temperature > 20 ? 'red' : 'blue',
   };
 
   return (
     <div>
-      <h2>Current Weather</h2>
-      <p style={temperatureStyle}>Temperature: {weather.temperature}°C</p>
-      <p>Conditions: {weather.conditions}</p>
+      <p style={tempStyle}>Temperature: {temperature}</p>
+      <p>Conditions: {conditions}</p>
+      <span style={tempStyle}>Color Indicator</span>
     </div>
   );
-}
+};
 
 export default WeatherDisplay;

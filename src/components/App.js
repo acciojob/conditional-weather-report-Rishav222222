@@ -1,25 +1,21 @@
 // App.js
-import React, { useState, useEffect } from "react";
-import WeatherDisplay from "./components/WeatherDisplay";
+import React, { useState, useEffect } from 'react';
+import WeatherDisplay from './WeatherDisplay';
 
-function App() {
-  // Initialize weather data state
-  const [weather, setWeather] = useState({ temperature: 0, conditions: "" });
+const App = () => {
+  const [weather, setWeather] = useState({ temperature: 0, conditions: '' });
 
   useEffect(() => {
-    // Mock weather data input
-    const weatherInput = { temperature: 25, conditions: "Sunny" };
-
-    // Update state with the given weather data
-    setWeather(weatherInput);
+    // Set the weather input as { temperature: 25, conditions: "Sunny" }
+    setWeather({ temperature: 25, conditions: "Sunny" });
   }, []);
 
   return (
-    <div className="App">
-      <h1>Weather Application</h1>
+    <div>
       <WeatherDisplay weather={weather} />
     </div>
   );
-}
+};
 
 export default App;
+
